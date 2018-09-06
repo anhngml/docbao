@@ -42,14 +42,14 @@ Riêng phần bổ sung stopword, từ ghép và phân nhóm cho từ khóa sử
 File cấu hình quan trọng nhất là client\docbao.txt. File ở dạng yaml để dễ chỉnh sửa. Phần quan trọng nhất của file này là khai báo cấu hình để quét báo. 
 
 Vói mỗi một nguồn báo để quét được cần khai báo cấu hình quét như sau:
-
-- Người Lao động:
-    url: https://nld.com.vn
-    date_tag:
-    date_class:
-        - ngayxuatban
-    date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})
-
+~~~
+- Người Lao động:  
+    url: https://nld.com.vn  
+    date_tag:  
+    date_class:  
+        - ngayxuatban  
+    date_re: (\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4})  
+~~~
 date_tag là list các tag_name có thể có của phần html chứa published_date trong web (cái này mở page source của bài viết để tìm, ví dụ: <time>...</time>)
 date_class tương tự, là list các class_name có thể có của phần html chứa pushlised_date trong web. Ví dụ: <div class="ngayxuatban">...</>
 date_re là expression để kiểm tra nội dung date tag / class đó có phải là ngày tháng không, và dùng để trích ngày tháng đó ra, đưa về một dạng chuẩn vì mỗi báo lại để một kiểu hiển thị thời gian khác nhau.
